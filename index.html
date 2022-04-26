@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
+		rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/aos.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+	<title>CryptoFollow</title>
+    <style>
+        :root {
+  --color: #DDD;
+  --bgc: #333;
+  --a: #333;
+  --hc: #FFF;
+  --hbgc: #333;
+  --round: 50%;
+}
+
+
+.al {
+  text-align: left;
+}
+
+.ac {
+  text-align: center;
+}
+
+.aj {
+  text-align: justify;
+}
+
+.container {
+  width: 100%;
+}
+.container h1 {
+  text-transform: uppercase;
+  font-size: 5rem;
+  margin: 1.8rem;
+  letter-spacing: 0.8rem;
+}
+.container h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-style: italic;
+}
+.container .count {
+  margin-top: 3rem;
+}
+.container .count .countd {
+  display: inline-block;
+  width: 6.5rem;
+  height: 6.5rem;
+  border: 2px solid;
+  border-radius: var(--round);
+  margin: 0 2.5rem 2.5rem;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+.container .count .countd span {
+  display: block;
+  font-size: 2rem;
+  margin-top: 1.6rem;
+}
+
+@media screen and (max-width: 575px) {
+  .countd {
+    margin: 0 4.6rem 4.6rem !important;
+  }
+}
+@media screen and (max-width: 430px) {
+  .countd {
+    margin: 0 2.5rem 2.5rem !important;
+  }
+}
+    </style>
+</head>
+
+<body>
+    <div class="hero text-center">
+        <div class="container ct ac">
+            <h1><div class="logo-area text-center mx-auto">
+                <img class="img-fluid " src="assets/img/logo@2x.png" alt="" />
+            </div></h1>
+            <h2></h2>
+            <div class="count">
+                <div class="countd">
+                    <span id="days">00</span>
+                    days
+                </div>
+                <div class="countd">
+                    <span id="hours">00</span>
+                    hours
+                </div>
+                <div class="countd">
+                    <span id="mins">00</span>
+                    minutes
+                </div>
+                <div class="countd">
+                    <span id="secs">00</span>
+                    seconds
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<script src="assets/js/jquery-3.5.1.min.js"></script>
+	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript" src="assets/js/slick.min.js"></script>
+	<script src="assets/js/aos.js"></script>
+	<script>
+        var count = new Date("jul 1,2022 00:00:00").getTime();
+	var x = setInterval( function() {
+	var now = new Date().getTime();
+	var d = count - now;
+	var days = Math.floor(d/(1000*60*60*24));
+	var hours = Math.floor((d%(1000*60*60*24))/(1000*60*60));
+	var minutes = Math.floor((d%(1000*60*60))/(1000*60));
+	var seconds = Math.floor((d%(1000*60))/1000);
+	document.getElementById("days").innerHTML = days;
+	document.getElementById("hours").innerHTML = hours;
+	document.getElementById("mins").innerHTML = minutes;
+	document.getElementById("secs").innerHTML = seconds;
+},1000);
+
+		AOS.init();
+
+		$(".slider").slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			arrows: false,
+			dots: false,
+
+			rtl: true,
+			responsive: [
+
+				{
+					breakpoint: 1008,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					},
+				},
+				{
+					breakpoint: 800,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					},
+				},
+			],
+		});
+		$(".slider-2").slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			autoplay: true,
+			autoplaySpeed: 2000,
+			arrows: false,
+			dots: false,
+
+			responsive: [
+
+				{
+					breakpoint: 1008,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 1,
+					},
+				},
+				{
+					breakpoint: 800,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1,
+					},
+				},
+			],
+		});
+	</script>
+</body>
+
+</html>
